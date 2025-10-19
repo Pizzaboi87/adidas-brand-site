@@ -156,8 +156,9 @@ const Shoe360Viewer = ({ slug }: Shoe360ViewerProps) => {
                     className="absolute -top-10 md:-top-16  -left-15 md:-left-30 lg:-left-20 -rotate-10 w-1/2 h-1/4"
                 />
 
-                {/* main image with fallback */}
-                <NextImage
+                {/* main image with fallback - next.js image has issues with cache */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                     src={frames[currentFrame] || imgSrc}
                     alt={`${slug} 360° view`}
                     width={400}
