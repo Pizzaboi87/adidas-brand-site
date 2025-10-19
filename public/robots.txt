@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://weiser-adidas.vercel.app
+
+# Sitemaps
+Sitemap: https://weiser-adidas.vercel.app/sitemap.xml

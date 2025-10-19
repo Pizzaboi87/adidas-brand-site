@@ -1,0 +1,47 @@
+{
+  "name": "adidas-brand-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "@huggingface/inference": "^4.11.1",
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.3.0",
+    "@tanstack/react-query": "^5.90.2",
+    "@vitalets/google-translate-api": "^9.2.1",
+    "animate.css": "^4.1.1",
+    "framer-motion": "^12.23.22",
+    "franc-min": "^6.2.0",
+    "gsap": "^3.13.0",
+    "next": "15.5.4",
+    "next-sitemap": "^4.2.3",
+    "openai": "^6.2.0",
+    "pg": "^8.16.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-fast-marquee": "^1.6.5",
+    "react-hot-toast": "^2.6.0",
+    "three": "^0.180.0",
+    "typed.js": "^2.1.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@iconify/react": "^6.0.2",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/pg": "^8.15.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
