@@ -8,12 +8,12 @@ import Loading from "@/components/common/Loading";
 import AppLoader from "@/components/common/AppLoader";
 import Script from "next/script";
 
-import { Rubik_Glitch, Rubik_Doodle_Shadow } from 'next/font/google'
+import { Rubik_Glitch, Rubik_Doodle_Shadow } from "next/font/google";
 import { Suspense } from "react";
 
 import type { Metadata } from "next";
-import "@/styles/global.css"
-import 'animate.css';
+import "@/styles/global.css";
+import "animate.css";
 
 const rubikGlitch = Rubik_Glitch({
   subsets: ["latin"],
@@ -72,7 +72,11 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en" dir="ltr" className={`${rubikGlitch.variable} ${rubikDoodle.variable} antialiased`}>
+    <html
+      lang="en"
+      dir="ltr"
+      className={`${rubikGlitch.variable} ${rubikDoodle.variable} antialiased`}
+    >
       <head>
         <meta name="apple-mobile-web-app-title" content="Adidas" />
 
@@ -80,6 +84,21 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/web-app-manifest-512x512" />
         <link rel="manifest" href="/manifest.json" />
+      </head>
+
+      <body className="relative">
+        <AppLoader>
+          <Suspense fallback={<Loading />}>
+            <Providers>
+              <Header />
+              <ScrollToTop />
+              {children}
+              <ToastProvider />
+              <Chat />
+              <Footer />
+            </Providers>
+          </Suspense>
+        </AppLoader>
 
         {/* Google Analytics */}
         <Script
@@ -106,20 +125,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             logo: "https://weiser-adidas.vercel.app/web-app-manifest-512x512",
           })}
         </Script>
-      </head>
-      <body className="relative">
-        <AppLoader>
-          <Suspense fallback={<Loading />}>
-            <Providers>
-              <Header />
-              <ScrollToTop />
-              {children}
-              <ToastProvider />
-              <Chat />
-              <Footer />
-            </Providers>
-          </Suspense>
-        </AppLoader>
       </body>
     </html>
   );
