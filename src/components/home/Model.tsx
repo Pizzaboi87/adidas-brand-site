@@ -50,7 +50,10 @@ const Model = () => {
     return (
         <section>
             <AnimatedBackground from="#b4b7f1" to="#7c7fbe">
-                <div className="2xl:h-[100vh] w-full flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 gap-12">
+                <div className="2xl:h-[100vh] w-full flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 gap-12 relative">
+                    {/* plus layer for mobile because canvas couldn't be scrolled */}
+                    <div className="w-full h-full bg-transparent absolute inset-0 z-10" />
+
                     {/* --- MODEL AREA --- */}
                     <div className="w-full lg:w-6/12 2xl:w-7/12 flex justify-center items-center max-h-[50vh] sm:max-h-[60vh] md:max-h-[70vh] aspect-[4/3]">
                         <Canvas

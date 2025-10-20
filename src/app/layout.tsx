@@ -81,6 +81,21 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <link rel="apple-touch-icon" href="/web-app-manifest-512x512" />
         <link rel="manifest" href="/manifest.json" />
 
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-PWMM303M4E"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PWMM303M4E');
+          `}
+        </Script>
+
         {/* Organization structured data */}
         <Script id="schema-org" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({

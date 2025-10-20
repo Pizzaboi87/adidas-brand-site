@@ -11,7 +11,7 @@ const Content = () => {
     const { compareElements } = useCompare();
 
     return (
-        <main className={`${compareElements.length ? "container mx-auto px-3 xs:px-0" : "xs:ml-10 lg:ml-24"} relative flex flex-col pb-[5rem] 2xl:pb-[10rem]`}>
+        <main className={`${compareElements.length ? "container mx-auto px-3 xs:px-0" : "xs:ml-10 lg:ml-24"} relative overflow-hidden flex flex-col pb-[5rem] 2xl:pb-[10rem]`}>
             <Image
                 src="/splash/splash-big_2.webp"
                 alt="splash-1"
